@@ -1,0 +1,31 @@
+{% include 'base/header.html' %}
+{% block content %}
+    <div class = "container">
+        <h4 style = "text-align: center;margin-top: 20px;margin-bottom:20px;">PETS LIST DATA</h4>
+
+        <div class="row">
+            {% for obj in objects %}
+            <div class="col-lg-3">
+                <div class="card" style="min-height: 200px; cursor: pointer;">
+                    <a href="{% url 'pet-detail' pk=obj.pk %}"><p>{{ obj.name }} </p></a>
+                    <img src="{{ obj.image.url }}" alt="Image will come here" class="card-image-top" width="170px">
+                    <!-- <p class="card-text">{{ obj.description }}</p>-->
+                    <div class="w3-panel w3-border"></div>
+                   <!-- <p> {{ obj.description }}</p>-->
+                    <p>{{ obj.age }}</p>
+                    <p><strong style="color:black;">Price: </strong>{{ obj.price}}. 
+                    <body style='background-color:powderblue;'></body>
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+
+{% endblock %}
+
+
+{% include 'base/footer.html' %}
+    

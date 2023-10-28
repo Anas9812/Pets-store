@@ -1,0 +1,52 @@
+{% include 'base/header.html' %}
+{% block content %}
+<div class="container">
+    <div class="col-lg-8 border p-3 main-section bg-white">
+        <div class="row hedding m-0 pl-3 pt-0 pb-2">
+            Product Details
+        </div>
+        <div class="row m-0">
+            <div class="col-lg-4 left-side-product-box pb-3">
+                <img src="{{ objects.image.url }}" class="border p-3" width="250px;">
+            </div>
+            <div class="col-lg-8">
+                <div class="right-side-pro-detail border p-3 m-0">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <span><strong> PET : </strong>{{ objects.name }}</span>
+                            <p class="m-0 p-0" style="color:red;"></p>
+                        </div>
+                        <div class="col-lg-12 mt-2">
+                            <p class="m-0 p-0 price-pro"><strong> Price : </strong>{{ objects.price }} </p>
+                            <hr class="p-2 m-1">
+                        </div>
+                        <div class="col-lg-12 pt-2">
+                            <h5><strong> ADDITIONAL DETAILS :   </strong></h5>
+                            <span>{{ objects.description }}</span>
+                            <hr class="m-0 pt-3 mt-4">
+                        </div>
+                        <div class="col-lg-12">
+                            <p class="tag-section"><strong> PET SPECIES : </strong>{{ objects.species }}</p>
+                           <!-- <strong>  </strong><span>{{ objects.breed }}</span>-->
+                        </div>
+                        <div class= "col-lg-12 mt-3">
+                            <p class="tag-section"><strong> GENDER : </strong> {{objects.gender }}</p>
+                        </div>
+                        <div class="col-lg-12 mt-3">
+                            <div class="row">
+                                <div class="col-lg-6 pb-2">
+                                    <a href="{% url 'add_to_cart' objects.id %}" class="btn btn-danger w-100"> CART </a>
+                                </div>
+                                <div class="col-lg-6">
+                                    <a href="#" class="btn btn-success w-100"> CALL </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% include 'base/footer.html' %}
